@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://car.tscn" type="PackedScene" id=1]
-[ext_resource path="res://temp/kenney_prototypetextures/PNG/Dark/texture_01.png" type="Texture" id=2]
+[ext_resource path="res://kenney_prototypetextures/PNG/Dark/texture_01.png" type="Texture" id=2]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 500, 500 )
@@ -29,6 +29,7 @@ shape = SubResource( 3 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.767136, 0.411214, 0.492348, -0.472443, 0.881361, 0, -0.433936, -0.232606, 0.870399, 0, 2.97544, 0 )
+light_energy = 0.5
 shadow_enabled = true
 
 [node name="car" parent="." instance=ExtResource( 1 )]

@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://temp/carkit_v1.4/Models/plastic.material" type="Material" id=1]
-[ext_resource path="res://temp/carkit_v1.4/Models/paintYellow.material" type="Material" id=2]
-[ext_resource path="res://temp/carkit_v1.4/Models/_defaultMat.material" type="Material" id=3]
-[ext_resource path="res://temp/carkit_v1.4/Models/window.material" type="Material" id=4]
-[ext_resource path="res://temp/carkit_v1.4/Models/carTire.material" type="Material" id=5]
-[ext_resource path="res://temp/carkit_v1.4/Models/paintRed.material" type="Material" id=6]
+[ext_resource path="res://kenney_carkit_v1.4/Models/plastic.material" type="Material" id=1]
+[ext_resource path="res://kenney_carkit_v1.4/Models/paintYellow.material" type="Material" id=2]
+[ext_resource path="res://kenney_carkit_v1.4/Models/_defaultMat.material" type="Material" id=3]
+[ext_resource path="res://kenney_carkit_v1.4/Models/window.material" type="Material" id=4]
+[ext_resource path="res://kenney_carkit_v1.4/Models/carTire.material" type="Material" id=5]
+[ext_resource path="res://kenney_carkit_v1.4/Models/paintRed.material" type="Material" id=6]
 [ext_resource path="res://car.gd" type="Script" id=7]
 
 [sub_resource type="ConvexPolygonShape" id=1]
