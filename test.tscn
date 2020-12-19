@@ -1,22 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://kenney_prototypetextures/PNG/Dark/texture_01.png" type="Texture" id=2]
+[ext_resource path="res://obstacle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://obstacle_spawner.gd" type="Script" id=4]
 
-[sub_resource type="PlaneMesh" id=1]
-size = Vector2( 500, 500 )
-
-[sub_resource type="SpatialMaterial" id=2]
-flags_world_triplanar = true
-params_diffuse_mode = 2
-albedo_texture = ExtResource( 2 )
-uv1_scale = Vector3( 0.1, 0.1, 0.1 )
-uv1_triplanar = true
-
-[sub_resource type="ConcavePolygonShape" id=3]
-data = PoolVector3Array( 250, 0, 250, -250, 0, 250, 250, 0, -250, -250, 0, 250, -250, 0, -250, 250, 0, -250 )
-
-[sub_resource type="Environment" id=4]
+[sub_resource type="Environment" id=1]
 background_mode = 1
 background_color = Color( 0.105882, 0.00784314, 0.0117647, 1 )
 ambient_light_color = Color( 1, 1, 1, 1 )
@@ -24,56 +13,20 @@ ambient_light_energy = 0.5
 dof_blur_far_distance = 8192.0
 adjustment_brightness = 1.35
 
+[sub_resource type="PlaneMesh" id=2]
+size = Vector2( 500, 500 )
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_world_triplanar = true
+params_diffuse_mode = 2
+albedo_texture = ExtResource( 2 )
+uv1_scale = Vector3( 0.1, 0.1, 0.1 )
+uv1_triplanar = true
+
+[sub_resource type="ConcavePolygonShape" id=4]
+data = PoolVector3Array( 250, 0, 250, -250, 0, 250, 250, 0, -250, -250, 0, 250, -250, 0, -250, 250, 0, -250 )
+
 [node name="Spatial" type="Spatial"]
-
-[node name="ground" type="MeshInstance" parent="."]
-mesh = SubResource( 1 )
-material/0 = SubResource( 2 )
-
-[node name="StaticBody2" type="StaticBody" parent="ground"]
-
-[node name="CollisionShape" type="CollisionShape" parent="ground/StaticBody2"]
-shape = SubResource( 3 )
-
-[node name="wall1" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 250, -250 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 2 )
-
-[node name="StaticBody2" type="StaticBody" parent="wall1"]
-
-[node name="CollisionShape" type="CollisionShape" parent="wall1/StaticBody2"]
-shape = SubResource( 3 )
-
-[node name="wall2" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 250, 250 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 2 )
-
-[node name="StaticBody2" type="StaticBody" parent="wall2"]
-
-[node name="CollisionShape" type="CollisionShape" parent="wall2/StaticBody2"]
-shape = SubResource( 3 )
-
-[node name="wall3" type="MeshInstance" parent="."]
-transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 250, 250, 0 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 2 )
-
-[node name="StaticBody2" type="StaticBody" parent="wall3"]
-
-[node name="CollisionShape" type="CollisionShape" parent="wall3/StaticBody2"]
-shape = SubResource( 3 )
-
-[node name="wall4" type="MeshInstance" parent="."]
-transform = Transform( -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0, 1, -250, 250, 0 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 2 )
-
-[node name="StaticBody2" type="StaticBody" parent="wall4"]
-
-[node name="CollisionShape" type="CollisionShape" parent="wall4/StaticBody2"]
-shape = SubResource( 3 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.827766, -0.096583, -0.552698, 0.378229, 0.823655, 0.422535, 0.414422, -0.558806, 0.718324, 0, 12.1043, 0 )
@@ -83,12 +36,71 @@ shadow_color = Color( 0.345098, 0.345098, 0.345098, 1 )
 directional_shadow_mode = 1
 
 [node name="car" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.539582, 0 )
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 70.863, 0, 70.863 )
 mass = 153.061
 
 [node name="Camera" type="Camera" parent="car"]
 transform = Transform( 1, 0, 0, 0, 0.98753, 0.157434, 0, -0.157434, 0.98753, 0, 2.42372, 3.89649 )
-environment = SubResource( 4 )
+environment = SubResource( 1 )
 doppler_tracking = 2
 fov = 78.0
 far = 1000.0
+
+[node name="obstacle" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.752783, -0.419765, -0.507066, 0, 0.770302, -0.63768, 0.658269, 0.480034, 0.57987, 0, 92.602, 0 )
+
+[node name="box" type="Spatial" parent="."]
+
+[node name="ground" type="MeshInstance" parent="box"]
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody2" type="StaticBody" parent="box/ground"]
+
+[node name="CollisionShape" type="CollisionShape" parent="box/ground/StaticBody2"]
+shape = SubResource( 4 )
+
+[node name="wall1" type="MeshInstance" parent="box"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 250, -250 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody2" type="StaticBody" parent="box/wall1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="box/wall1/StaticBody2"]
+shape = SubResource( 4 )
+
+[node name="wall2" type="MeshInstance" parent="box"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 250, 250 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody2" type="StaticBody" parent="box/wall2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="box/wall2/StaticBody2"]
+shape = SubResource( 4 )
+
+[node name="wall3" type="MeshInstance" parent="box"]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 250, 250, 0 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody2" type="StaticBody" parent="box/wall3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="box/wall3/StaticBody2"]
+shape = SubResource( 4 )
+
+[node name="wall4" type="MeshInstance" parent="box"]
+transform = Transform( -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0, 1, -250, 250, 0 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody2" type="StaticBody" parent="box/wall4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="box/wall4/StaticBody2"]
+shape = SubResource( 4 )
+
+[node name="obstacle_spawner" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 89.3535, 0 )
+script = ExtResource( 4 )
+obstacle = ExtResource( 3 )
