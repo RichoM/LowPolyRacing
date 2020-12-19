@@ -80,6 +80,7 @@ transform = Transform( 0.827766, -0.096583, -0.552698, 0.378229, 0.823655, 0.422
 light_energy = 0.5
 shadow_enabled = true
 shadow_color = Color( 0.345098, 0.345098, 0.345098, 1 )
+directional_shadow_mode = 1
 
 [node name="car" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.539582, 0 )
