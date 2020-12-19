@@ -7,8 +7,8 @@
 size = Vector2( 500, 500 )
 
 [sub_resource type="SpatialMaterial" id=2]
-flags_unshaded = true
 flags_world_triplanar = true
+params_diffuse_mode = 2
 albedo_texture = ExtResource( 2 )
 uv1_scale = Vector3( 0.1, 0.1, 0.1 )
 uv1_triplanar = true
@@ -76,9 +76,10 @@ material/0 = SubResource( 2 )
 shape = SubResource( 3 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 0.767136, 0.411214, 0.492348, -0.472443, 0.881361, 0, -0.433936, -0.232606, 0.870399, 0, 2.97544, 0 )
+transform = Transform( 0.827766, -0.096583, -0.552698, 0.378229, 0.823655, 0.422535, 0.414422, -0.558806, 0.718324, 0, 12.1043, 0 )
 light_energy = 0.5
 shadow_enabled = true
+shadow_color = Color( 0.345098, 0.345098, 0.345098, 1 )
 
 [node name="car" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.539582, 0 )
