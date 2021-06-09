@@ -16,8 +16,17 @@ _global_script_class_icons={
 [application]
 
 config/name="LowPolyRacing"
-run/main_scene="res://test.tscn"
+run/main_scene="res://Race.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=512
+window/size/height=300
+window/size/test_width=1024
+window/size/test_height=600
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [rendering]
 
