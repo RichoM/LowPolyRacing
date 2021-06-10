@@ -4,6 +4,8 @@ const MAX_SPEED = 750
 const MAX_STEERING = 0.25
 const ACCELERATION = 0.75
 
+onready var camera = $Camera
+
 func _process(delta):
 	self.axis_lock_linear_y = self.axis_lock_linear_y || self.linear_velocity.length() > 10
 	
@@ -21,4 +23,5 @@ func _process(delta):
 		target_steering = -MAX_STEERING
 	
 	steering = lerp(steering, target_steering, 4 * delta)
-	
+	if camera:
+		camera.h_offset = -steering * 1.5
