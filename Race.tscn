@@ -32,6 +32,7 @@ axis_lock_angular_z = true
 [node name="Camera" type="Camera" parent="car"]
 transform = Transform( 1, -6.80132e-08, -7.17729e-09, 6.80132e-08, 0.977973, 0.208731, -7.17728e-09, -0.208731, 0.977973, 1.43051e-06, 2.69673, 4.81864 )
 current = true
+fov = 60.0
 far = 1000.0
 
 [node name="Camera2" type="Camera" parent="car"]

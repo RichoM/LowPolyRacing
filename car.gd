@@ -7,8 +7,6 @@ const ACCELERATION = 0.75
 onready var camera = $Camera
 
 func _process(delta):
-	self.axis_lock_linear_y = self.axis_lock_linear_y || self.linear_velocity.length() > 10
-	
 	if Input.is_action_pressed("ui_up"):
 		engine_force = -ACCELERATION * MAX_SPEED
 	elif Input.is_action_pressed("ui_down"):
@@ -23,5 +21,14 @@ func _process(delta):
 		target_steering = -MAX_STEERING
 	
 	steering = lerp(steering, target_steering, 4 * delta)
+	
+	self.axis_lock_linear_y = self.axis_lock_linear_y || self.linear_velocity.length() > 10
+	
 	if camera:
 		camera.h_offset = -steering * 1.5
+		var velocity = linear_velocity.length()
+		camera.fov = lerp(60, 90, velocity / 75)
+		camera.fov = min(camera.fov, 90)
+		
+			
+			
