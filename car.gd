@@ -19,4 +19,5 @@ func _process(delta):
 	elif Input.is_action_pressed("ui_right"):
 		target_steering = -MAX_STEERING
 	
-	steering = lerp(steering, target_steering, 5 * delta)
+	steering = lerp(steering, target_steering, 2.5 * delta)
+	
