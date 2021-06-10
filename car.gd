@@ -4,12 +4,13 @@ const MAX_SPEED = 750
 const MAX_STEERING = 0.25
 const ACCELERATION = 0.75
 
-
 func _process(delta):
+	self.axis_lock_linear_y = self.axis_lock_linear_y || self.linear_velocity.length() > 10
+	
 	if Input.is_action_pressed("ui_up"):
 		engine_force = -ACCELERATION * MAX_SPEED
 	elif Input.is_action_pressed("ui_down"):
-		engine_force = ACCELERATION * MAX_SPEED
+		engine_force = ACCELERATION * MAX_SPEED * 0.5
 	else: 
 		engine_force *= 0.75
 	

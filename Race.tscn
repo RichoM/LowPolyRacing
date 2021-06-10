@@ -25,7 +25,7 @@ margin_bottom = 59.0
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 9.37546, 0, 0 )
 
 [node name="car" parent="." instance=ExtResource( 1 )]
-transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, -9.261, 0.226, -14.1444 )
+transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, -9.261, 0.226, -14.144 )
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 
