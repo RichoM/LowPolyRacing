@@ -101,6 +101,7 @@ surfaces/2 = {
 }
 
 [node name="car" type="VehicleBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.22561, 0 )
 mass = 58.6735
 script = ExtResource( 7 )
 

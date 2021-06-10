@@ -43,7 +43,6 @@ directional_shadow_mode = 1
 
 [node name="car" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 70.863, 0, 70.863 )
-mass = 153.061
 
 [node name="Camera" type="Camera" parent="car"]
 transform = Transform( 1, 0, 0, 0, 0.98753, 0.157434, 0, -0.157434, 0.98753, 0, 2.42372, 3.89649 )
