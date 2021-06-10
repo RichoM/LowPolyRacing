@@ -24,7 +24,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.30043, 0, -77.2229 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.30043, 0, -57.9785 )
 
 [node name="roadStraightLong18" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.30043, 0, -39.2113 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.30043, 0, -38.5448 )
 
 [node name="roadStraightLong28" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.30043, 0, -19.1932 )
