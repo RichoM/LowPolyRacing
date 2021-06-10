@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Road.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://fps.tscn" type="PackedScene" id=5]
 [ext_resource path="res://extra/grandStandAwning.tscn" type="PackedScene" id=6]
 [ext_resource path="res://extra/grandStandRound.tscn" type="PackedScene" id=7]
+[ext_resource path="res://road/overheadRoundColored.tscn" type="PackedScene" id=8]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 2000, 2000 )
@@ -43,7 +44,7 @@ material/0 = ExtResource( 3 )
 shape = SubResource( 2 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( -0.624628, 0.479909, 0.616058, 0.777535, 0.455591, 0.433446, -0.0726557, 0.749749, -0.657721, 3.96282, 5.40185, -0.910858 )
+transform = Transform( -0.536222, 0.840415, 0.0785432, 0.777537, 0.455595, 0.433439, 0.328485, 0.29349, -0.897754, 3.96282, 15.3862, -0.910858 )
 light_color = Color( 0.898039, 1, 0, 1 )
 light_energy = 0.5
 shadow_enabled = true
@@ -163,7 +164,7 @@ transform = Transform( 0.792737, 0, -0.609564, 0, 1, 0, 0.609564, 0, 0.792737, -
 transform = Transform( 0.997331, 0, 0.073012, 0, 1, 0, -0.073012, 0, 0.997331, -111.935, 0, -95.2239 )
 
 [node name="treeLarge59" parent="Trees" instance=ExtResource( 4 )]
-transform = Transform( 0.792737, 0, -0.609564, 0, 1, 0, 0.609564, 0, 0.792737, -118.435, 0, -258.995 )
+transform = Transform( 0.792737, 0, -0.609564, 0, 1, 0, 0.609564, 0, 0.792737, -185.008, 0, -232.67 )
 
 [node name="treeLarge61" parent="Trees" instance=ExtResource( 4 )]
 transform = Transform( 0.591267, 0, -0.806476, 0, 1, 0, 0.806476, 0, 0.591267, -126.331, 0, -250.642 )
@@ -217,10 +218,10 @@ transform = Transform( 0.997331, 0, 0.073012, 0, 1, 0, -0.073012, 0, 0.997331, -
 transform = Transform( 0.792737, 0, -0.609564, 0, 1, 0, 0.609564, 0, 0.792737, -62.7034, 0, -310.172 )
 
 [node name="treeLarge84" parent="Trees" instance=ExtResource( 4 )]
-transform = Transform( 0.792737, 0, -0.609564, 0, 1, 0, 0.609564, 0, 0.792737, -77.5144, 0, -296.323 )
+transform = Transform( 0.792737, 0, -0.609564, 0, 1, 0, 0.609564, 0, 0.792737, -176.994, 0, -319.358 )
 
 [node name="treeLarge85" parent="Trees" instance=ExtResource( 4 )]
-transform = Transform( 0.591267, 0, -0.806476, 0, 1, 0, 0.806476, 0, 0.591267, -70.5994, 0, -301.82 )
+transform = Transform( 0.591267, 0, -0.806476, 0, 1, 0, 0.806476, 0, 0.591267, -192.101, 0, -329.664 )
 
 [node name="treeLarge86" parent="Trees" instance=ExtResource( 4 )]
 transform = Transform( 0.746115, 0, 0.665817, 0, 1, 0, -0.665817, 0, 0.746115, -264.41, 0, -257.328 )
@@ -484,7 +485,7 @@ transform = Transform( 0.792737, 0, -0.609564, 0, 1, 0, 0.609564, 0, 0.792737, -
 transform = Transform( 0.591267, 0, -0.806476, 0, 1, 0, 0.806476, 0, 0.591267, -457.542, 0, -321.224 )
 
 [node name="treeLarge206" parent="Trees" instance=ExtResource( 4 )]
-transform = Transform( 0.746115, 0, 0.665817, 0, 1, 0, -0.665817, 0, 0.746115, -110.545, 0, -308.785 )
+transform = Transform( 0.746115, 0, 0.665817, 0, 1, 0, -0.665817, 0, 0.746115, -203.443, 0, -314.86 )
 
 [node name="treeLarge207" parent="Trees" instance=ExtResource( 4 )]
 transform = Transform( 0.997331, 0, 0.073012, 0, 1, 0, -0.073012, 0, 0.997331, -413.902, 0, -236.812 )
@@ -517,10 +518,10 @@ transform = Transform( 0.997331, 0, 0.073012, 0, 1, 0, -0.073012, 0, 0.997331, -
 transform = Transform( 0.997331, 0, 0.073012, 0, 1, 0, -0.073012, 0, 0.997331, -279.332, 0, -88.2965 )
 
 [node name="treeLarge217" parent="Trees" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -455.721, 0, -304.657 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -373.961, 0, -333.26 )
 
 [node name="treeLarge218" parent="Trees" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -474.405, 0, -297.294 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -388.595, 0, -351.716 )
 
 [node name="treeLarge219" parent="Trees" instance=ExtResource( 4 )]
 transform = Transform( 0.792737, 0, -0.609564, 0, 1, 0, 0.609564, 0, 0.792737, -497.826, 0, -314.508 )
@@ -532,7 +533,7 @@ transform = Transform( 0.792737, 0, -0.609564, 0, 1, 0, 0.609564, 0, 0.792737, -
 transform = Transform( 0.591267, 0, -0.806476, 0, 1, 0, 0.806476, 0, 0.591267, -505.723, 0, -306.156 )
 
 [node name="treeLarge222" parent="Trees" instance=ExtResource( 4 )]
-transform = Transform( 0.746115, 0, 0.665817, 0, 1, 0, -0.665817, 0, 0.746115, -468.277, 0, -293.716 )
+transform = Transform( 0.746115, 0, 0.665817, 0, 1, 0, -0.665817, 0, 0.746115, -415.626, 0, -342.317 )
 
 [node name="treeLarge223" parent="Trees" instance=ExtResource( 4 )]
 transform = Transform( -0.564376, 0, 0.825517, 0, 1, 0, -0.825517, 0, -0.564376, -591.94, 0, -251.653 )
@@ -802,7 +803,7 @@ transform = Transform( -0.406019, 0, -0.913865, 0, 1, 0, 0.913865, 0, -0.406019,
 transform = Transform( -0.406019, 0, -0.913865, 0, 1, 0, 0.913865, 0, -0.406019, -168.326, 0, -199.876 )
 
 [node name="treeLarge332" parent="Trees" instance=ExtResource( 4 )]
-transform = Transform( -0.878925, 0, -0.47696, 0, 1, 0, 0.47696, 0, -0.878925, -115.81, 0, -304.054 )
+transform = Transform( -0.878925, 0, -0.47696, 0, 1, 0, 0.47696, 0, -0.878925, -212.252, 0, -319.495 )
 
 [node name="treeLarge335" parent="Trees" instance=ExtResource( 4 )]
 transform = Transform( -0.338212, 0, -0.94107, 0, 1, 0, 0.94107, 0, -0.338212, -192.249, 0, -388.529 )
@@ -979,7 +980,7 @@ transform = Transform( 0.825124, 0, -0.564952, 0, 1, 0, 0.564952, 0, 0.825124, -
 transform = Transform( 0.309731, 0, -0.950824, 0, 1, 0, 0.950824, 0, 0.309731, -86.6744, 0, -322.569 )
 
 [node name="treeLarge424" parent="Trees" instance=ExtResource( 4 )]
-transform = Transform( 0.309731, 0, -0.950824, 0, 1, 0, 0.950824, 0, 0.309731, -93.3094, 0, -296.88 )
+transform = Transform( 0.309731, 0, -0.950824, 0, 1, 0, 0.950824, 0, 0.309731, -210.507, 0, -305.233 )
 
 [node name="treeLarge425" parent="Trees" instance=ExtResource( 4 )]
 transform = Transform( 0.239483, 0, -0.9709, 0, 1, 0, 0.9709, 0, 0.239483, -287.299, 0, -51.6273 )
@@ -1036,7 +1037,7 @@ transform = Transform( -2.44381e-06, 0, -6, 0, 3, 0, 15, 0, -9.77524e-07, -534.3
 transform = Transform( -15, 0, -1.95505e-06, 0, 3, 0, 4.88762e-06, 0, -6, -434.342, 0, 31.1939 )
 
 [node name="grandStandAwning11" parent="Stands" instance=ExtResource( 6 )]
-transform = Transform( -30, 0, -2.33649e-06, 0, 3, 0, 1.16824e-05, 0, -6, -321.403, 0, -260.636 )
+transform = Transform( -10, 0, -3.767e-06, 0, 3, 0, 6.27833e-06, 0, -6, -284.393, 0, -256.839 )
 
 [node name="grandStandAwning5" parent="Stands" instance=ExtResource( 6 )]
 transform = Transform( -1.62921e-06, 0, 6, 0, 3, 0, -10, 0, -9.77524e-07, -18.8721, 0, -158.01 )
@@ -1058,3 +1059,87 @@ transform = Transform( -9.77524e-07, 0, -6, 0, 3, 0, 6, 0, -9.77524e-07, -532.17
 
 [node name="grandStandRound5" parent="Stands" instance=ExtResource( 7 )]
 transform = Transform( -6, 0, -1.95505e-06, 0, 3, 0, 1.95505e-06, 0, -6, 0.236694, 0, -262.448 )
+
+[node name="Tunnel" type="Spatial" parent="."]
+transform = Transform( -3.25841e-07, 0, 3, 0, 2, 0, -2, 0, -4.88762e-07, -452.785, 0, -286.262 )
+
+[node name="overheadRoundColored" parent="Tunnel" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53671, 0, 0 )
+
+[node name="overheadRoundColored3" parent="Tunnel" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53674, 0, -8.87953 )
+
+[node name="overheadRoundColored4" parent="Tunnel" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53677, 0, -13.1864 )
+
+[node name="overheadRoundColored5" parent="Tunnel" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53677, 0, 4.46637 )
+
+[node name="overheadRoundColored6" parent="Tunnel" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53677, 0, 8.98929 )
+
+[node name="overheadRoundColored2" parent="Tunnel" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53671, 0, -4.47214 )
+
+[node name="Tunnel2" type="Spatial" parent="."]
+transform = Transform( -3.25841e-07, 0, 3, 0, 2, 0, -2, 0, -4.88762e-07, -93.3071, 0, -286.262 )
+
+[node name="overheadRoundColored" parent="Tunnel2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53671, 0, 0 )
+
+[node name="overheadRoundColored3" parent="Tunnel2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53674, 0, -8.87953 )
+
+[node name="overheadRoundColored4" parent="Tunnel2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53677, 0, -13.1864 )
+
+[node name="overheadRoundColored5" parent="Tunnel2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53677, 0, 4.46637 )
+
+[node name="overheadRoundColored6" parent="Tunnel2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53677, 0, 8.98929 )
+
+[node name="overheadRoundColored2" parent="Tunnel2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53671, 0, -4.47214 )
+
+[node name="Tunnel3" type="Spatial" parent="."]
+transform = Transform( -3.25841e-07, 0, 3, 0, 2, 0, -2, 0, -4.88762e-07, -174.293, 0, -286.262 )
+
+[node name="overheadRoundColored" parent="Tunnel3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53671, 0, 0 )
+
+[node name="overheadRoundColored3" parent="Tunnel3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53674, 0, -8.87953 )
+
+[node name="overheadRoundColored4" parent="Tunnel3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53677, 0, -13.1864 )
+
+[node name="overheadRoundColored5" parent="Tunnel3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53677, 0, 4.46637 )
+
+[node name="overheadRoundColored6" parent="Tunnel3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53677, 0, 8.98929 )
+
+[node name="overheadRoundColored2" parent="Tunnel3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53671, 0, -4.47214 )
+
+[node name="Tunnel4" type="Spatial" parent="."]
+transform = Transform( -3.25841e-07, 0, 3, 0, 2, 0, -2, 0, -4.88762e-07, -371.427, 0, -286.262 )
+
+[node name="overheadRoundColored" parent="Tunnel4" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53671, 0, 0 )
+
+[node name="overheadRoundColored3" parent="Tunnel4" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53674, 0, -8.87953 )
+
+[node name="overheadRoundColored4" parent="Tunnel4" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53677, 0, -13.1864 )
+
+[node name="overheadRoundColored5" parent="Tunnel4" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53677, 0, 4.46637 )
+
+[node name="overheadRoundColored6" parent="Tunnel4" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53677, 0, 8.98929 )
+
+[node name="overheadRoundColored2" parent="Tunnel4" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53671, 0, -4.47214 )
