@@ -7,17 +7,22 @@ const ACCELERATION = 0.75
 onready var camera = $Camera
 
 func _process(delta):
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("car_forward"):
 		engine_force = -ACCELERATION * MAX_SPEED
-	elif Input.is_action_pressed("ui_down"):
+	elif Input.is_action_pressed("car_backwards"):
 		engine_force = ACCELERATION * MAX_SPEED * 0.5
 	else: 
 		engine_force *= 0.75
 	
+	if Input.is_action_pressed("car_brake"):
+		brake = 25
+	else:
+		brake = 0
+	
 	var target_steering = 0
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("car_turnleft"):
 		target_steering = MAX_STEERING
-	elif Input.is_action_pressed("ui_right"):
+	elif Input.is_action_pressed("car_turnright"):
 		target_steering = -MAX_STEERING
 	
 	steering = lerp(steering, target_steering, 4 * delta)
