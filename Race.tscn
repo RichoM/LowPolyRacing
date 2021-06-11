@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Road.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://kenney_racingkit2/grandStandAwning.tscn" type="PackedScene" id=6]
 [ext_resource path="res://kenney_racingkit2/grandStandRound.tscn" type="PackedScene" id=7]
 [ext_resource path="res://kenney_racingkit2/overheadRoundColored.tscn" type="PackedScene" id=8]
+[ext_resource path="res://engine-loop/engine-loop-1-normalized.wav" type="AudioStream" id=9]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 2000, 2000 )
@@ -33,6 +34,13 @@ axis_lock_angular_z = true
 transform = Transform( 1, -6.80132e-08, -7.17729e-09, 6.80132e-08, 0.977973, 0.208731, -7.17728e-09, -0.208731, 0.977973, 1.43051e-06, 2.69673, 4.81864 )
 fov = 60.0
 far = 1000.0
+
+[node name="engine_sfx" type="AudioStreamPlayer" parent="car"]
+stream = ExtResource( 9 )
+volume_db = -80.0
+pitch_scale = 0.01
+autoplay = true
+bus = "SFX"
 
 [node name="Ground" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -175.848, 0.124985, -5.08947 )
@@ -1011,7 +1019,7 @@ transform = Transform( 0.309731, 0, -0.950824, 0, 1, 0, 0.950824, 0, 0.309731, -
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0 )
 
 [node name="grandStandAwning" parent="Stands" instance=ExtResource( 6 )]
-transform = Transform( -2.44381e-06, 0, -6, 0, 3, 0, 15, 0, -9.77524e-07, 3.10098, 0, -96.5099 )
+transform = Transform( -2.44381e-06, 0, -6, 0, 3, 0, 15, 0, -9.77524e-07, 3.08374, 0.0521584, -96.5011 )
 
 [node name="grandStandAwning2" parent="Stands" instance=ExtResource( 6 )]
 transform = Transform( -1.62921e-06, 0, -6, 0, 3, 0, 10, 0, -9.77524e-07, 3.10098, 0, 27.8981 )
