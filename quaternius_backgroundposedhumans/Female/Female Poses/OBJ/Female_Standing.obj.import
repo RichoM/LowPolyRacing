@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Female_Standing.obj-05e3b57fefa73cb34ebe311d675e8787.mesh"
+
+[deps]
+
+files=[ "res://.import/Female_Standing.obj-05e3b57fefa73cb34ebe311d675e8787.mesh" ]
+
+source_file="res://quaternius_backgroundposedhumans/Female/Female Poses/OBJ/Female_Standing.obj"
+dest_files=[ "res://.import/Female_Standing.obj-05e3b57fefa73cb34ebe311d675e8787.mesh", "res://.import/Female_Standing.obj-05e3b57fefa73cb34ebe311d675e8787.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

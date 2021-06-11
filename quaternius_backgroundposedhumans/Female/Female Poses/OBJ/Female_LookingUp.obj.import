@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Female_LookingUp.obj-0d4e8bd59ac48aa57e33317bd02fb616.mesh"
+
+[deps]
+
+files=[ "res://.import/Female_LookingUp.obj-0d4e8bd59ac48aa57e33317bd02fb616.mesh" ]
+
+source_file="res://quaternius_backgroundposedhumans/Female/Female Poses/OBJ/Female_LookingUp.obj"
+dest_files=[ "res://.import/Female_LookingUp.obj-0d4e8bd59ac48aa57e33317bd02fb616.mesh", "res://.import/Female_LookingUp.obj-0d4e8bd59ac48aa57e33317bd02fb616.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

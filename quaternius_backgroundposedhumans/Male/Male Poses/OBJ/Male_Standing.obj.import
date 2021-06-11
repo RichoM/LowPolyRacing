@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Male_Standing.obj-ef9ba61f450662520e5df312c924ffdd.mesh"
+
+[deps]
+
+files=[ "res://.import/Male_Standing.obj-ef9ba61f450662520e5df312c924ffdd.mesh" ]
+
+source_file="res://quaternius_backgroundposedhumans/Male/Male Poses/OBJ/Male_Standing.obj"
+dest_files=[ "res://.import/Male_Standing.obj-ef9ba61f450662520e5df312c924ffdd.mesh", "res://.import/Male_Standing.obj-ef9ba61f450662520e5df312c924ffdd.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

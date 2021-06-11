@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Female_Sitting_Cheering.obj-709e8d6942a229f1a78d39d406b4ecb7.mesh"
+
+[deps]
+
+files=[ "res://.import/Female_Sitting_Cheering.obj-709e8d6942a229f1a78d39d406b4ecb7.mesh" ]
+
+source_file="res://quaternius_backgroundposedhumans/Female/Female Poses/OBJ/Female_Sitting_Cheering.obj"
+dest_files=[ "res://.import/Female_Sitting_Cheering.obj-709e8d6942a229f1a78d39d406b4ecb7.mesh", "res://.import/Female_Sitting_Cheering.obj-709e8d6942a229f1a78d39d406b4ecb7.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

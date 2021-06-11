@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Male_Hairstyle_4.obj-962d5c94e1053386f425a242aff15bdc.mesh"
+
+[deps]
+
+files=[ "res://.import/Male_Hairstyle_4.obj-962d5c94e1053386f425a242aff15bdc.mesh" ]
+
+source_file="res://quaternius_backgroundposedhumans/Male/Male Hairstyles/OBJ/Male_Hairstyle_4.obj"
+dest_files=[ "res://.import/Male_Hairstyle_4.obj-962d5c94e1053386f425a242aff15bdc.mesh", "res://.import/Male_Hairstyle_4.obj-962d5c94e1053386f425a242aff15bdc.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Male_Sitting_Cheering.obj-be00eae19ca5de64f261e7d41c45a7c1.mesh"
+
+[deps]
+
+files=[ "res://.import/Male_Sitting_Cheering.obj-be00eae19ca5de64f261e7d41c45a7c1.mesh" ]
+
+source_file="res://quaternius_backgroundposedhumans/Male/Male Poses/OBJ/Male_Sitting_Cheering.obj"
+dest_files=[ "res://.import/Male_Sitting_Cheering.obj-be00eae19ca5de64f261e7d41c45a7c1.mesh", "res://.import/Male_Sitting_Cheering.obj-be00eae19ca5de64f261e7d41c45a7c1.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
