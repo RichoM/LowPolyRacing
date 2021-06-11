@@ -31,14 +31,7 @@ axis_lock_angular_z = true
 
 [node name="Camera" type="Camera" parent="car"]
 transform = Transform( 1, -6.80132e-08, -7.17729e-09, 6.80132e-08, 0.977973, 0.208731, -7.17728e-09, -0.208731, 0.977973, 1.43051e-06, 2.69673, 4.81864 )
-current = true
 fov = 60.0
-far = 1000.0
-
-[node name="Camera2" type="Camera" parent="car"]
-transform = Transform( 1, 0, -5.30863e-14, 5.30863e-14, 1.62921e-07, 1, 0, -1, 1.62921e-07, 0, 30, 0 )
-projection = 1
-size = 40.8742
 far = 1000.0
 
 [node name="Ground" type="MeshInstance" parent="."]
