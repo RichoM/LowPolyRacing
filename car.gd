@@ -7,6 +7,9 @@ const ACCELERATION = 0.75
 onready var camera = $Camera
 
 func _process(delta):
+	if Input.is_action_just_released("level_reset"):
+		get_tree().reload_current_scene()
+		
 	if Input.is_action_pressed("car_forward"):
 		engine_force = -ACCELERATION * MAX_SPEED
 	elif Input.is_action_pressed("car_backwards"):
