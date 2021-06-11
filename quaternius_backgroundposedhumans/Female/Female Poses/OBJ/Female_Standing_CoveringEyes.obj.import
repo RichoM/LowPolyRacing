@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Female_Standing_CoveringEyes.obj-857d986ccad2f225bc0c8171d2bc0111.mesh"
+
+[deps]
+
+files=[ "res://.import/Female_Standing_CoveringEyes.obj-857d986ccad2f225bc0c8171d2bc0111.mesh" ]
+
+source_file="res://quaternius_backgroundposedhumans/Female/Female Poses/OBJ/Female_Standing_CoveringEyes.obj"
+dest_files=[ "res://.import/Female_Standing_CoveringEyes.obj-857d986ccad2f225bc0c8171d2bc0111.mesh", "res://.import/Female_Standing_CoveringEyes.obj-857d986ccad2f225bc0c8171d2bc0111.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

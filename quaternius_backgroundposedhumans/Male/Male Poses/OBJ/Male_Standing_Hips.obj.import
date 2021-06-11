@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Male_Standing_Hips.obj-f409c3dcd1e45a4d781de2ad493fa6a8.mesh"
+
+[deps]
+
+files=[ "res://.import/Male_Standing_Hips.obj-f409c3dcd1e45a4d781de2ad493fa6a8.mesh" ]
+
+source_file="res://quaternius_backgroundposedhumans/Male/Male Poses/OBJ/Male_Standing_Hips.obj"
+dest_files=[ "res://.import/Male_Standing_Hips.obj-f409c3dcd1e45a4d781de2ad493fa6a8.mesh", "res://.import/Male_Standing_Hips.obj-f409c3dcd1e45a4d781de2ad493fa6a8.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

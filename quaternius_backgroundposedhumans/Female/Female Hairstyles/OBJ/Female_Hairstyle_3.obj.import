@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Female_Hairstyle_3.obj-9ea16a810f6c249fb4694db9a933422f.mesh"
+
+[deps]
+
+files=[ "res://.import/Female_Hairstyle_3.obj-9ea16a810f6c249fb4694db9a933422f.mesh" ]
+
+source_file="res://quaternius_backgroundposedhumans/Female/Female Hairstyles/OBJ/Female_Hairstyle_3.obj"
+dest_files=[ "res://.import/Female_Hairstyle_3.obj-9ea16a810f6c249fb4694db9a933422f.mesh", "res://.import/Female_Hairstyle_3.obj-9ea16a810f6c249fb4694db9a933422f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
