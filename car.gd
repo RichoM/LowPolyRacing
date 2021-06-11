@@ -32,7 +32,7 @@ func _process(delta):
 	steering = lerp(steering, target_steering, 4 * delta)
 	
 	var velocity = linear_velocity.length()
-	self.axis_lock_linear_y = self.axis_lock_linear_y || velocity > 10
+	self.axis_lock_linear_y = self.axis_lock_linear_y || velocity > 20
 	
 	if camera:
 		camera.h_offset = -steering * 1.5
