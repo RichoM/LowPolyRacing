@@ -5,6 +5,7 @@ const MAX_STEERING = 0.25
 const ACCELERATION = 0.75
 
 onready var camera = $Camera
+onready var engine_sfx = $engine_sfx
 
 func _process(delta):
 	if Input.is_action_just_released("level_reset"):
@@ -30,13 +31,15 @@ func _process(delta):
 	
 	steering = lerp(steering, target_steering, 4 * delta)
 	
-	self.axis_lock_linear_y = self.axis_lock_linear_y || self.linear_velocity.length() > 10
+	var velocity = linear_velocity.length()
+	self.axis_lock_linear_y = self.axis_lock_linear_y || velocity > 10
 	
 	if camera:
 		camera.h_offset = -steering * 1.5
-		var velocity = linear_velocity.length()
 		camera.fov = lerp(60, 90, velocity / 75)
 		camera.fov = min(camera.fov, 90)
 		
-			
-			
+	if engine_sfx:
+		engine_sfx.pitch_scale = lerp(0, 1.0, velocity / 75)
+		engine_sfx.pitch_scale = min(engine_sfx.pitch_scale, 2)
+		engine_sfx.volume_db = lerp(-20, 0, engine_sfx.pitch_scale/1.5)
