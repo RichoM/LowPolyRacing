@@ -40,6 +40,9 @@ func _process(delta):
 		camera.fov = min(camera.fov, 90)
 		
 	if engine_sfx:
-		engine_sfx.pitch_scale = lerp(0, 1.0, velocity / 75)
+		engine_sfx.pitch_scale = lerp(0.01, 1.0, velocity / 75)
 		engine_sfx.pitch_scale = min(engine_sfx.pitch_scale, 2)
-		engine_sfx.volume_db = lerp(-20, 0, engine_sfx.pitch_scale/1.5)
+		engine_sfx.volume_db = lerp(-20, 0, engine_sfx.pitch_scale/1.5) + 5
+		if Input.is_action_just_released("mute"):
+			engine_sfx.playing = !engine_sfx.playing
+	
