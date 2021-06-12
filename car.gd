@@ -10,6 +10,7 @@ onready var engine_sfx = $engine_sfx
 
 signal new_record
 
+var input_enabled : bool = false
 var checkpoints = []
 var laps = 0
 var lap_begin = 0
@@ -47,6 +48,7 @@ func entered_checkpoint(checkpoint : int, total : int):
 func _process(delta):
 	if lap_begin > 0: cur_time = OS.get_ticks_msec() - lap_begin
 	
+	if !input_enabled: return
 	if Input.is_action_just_released("level_reset"):
 		get_tree().reload_current_scene()
 		

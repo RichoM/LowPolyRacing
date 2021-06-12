@@ -38,3 +38,9 @@ func format(duration):
 	var s = floor((duration/1000)%60)
 	var m = floor((duration/(1000*60))%60)
 	return "%02d:%02d:%02d" % [m, s, ms]
+
+
+func _on_play_button_pressed():
+	player.input_enabled = true
+	$overlay.hide()
+	print("PLAY!")
