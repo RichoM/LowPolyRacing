@@ -19,8 +19,6 @@ data = PoolVector3Array( 1000, 0, 1000, -1000, 0, 1000, 1000, 0, -1000, -1000, 0
 [node name="Race" type="Spatial"]
 
 [node name="fps" parent="." instance=ExtResource( 5 )]
-visible = false
-margin_bottom = 59.0
 
 [node name="Road" parent="." instance=ExtResource( 2 )]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 9.37546, 0, 0 )
