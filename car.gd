@@ -11,7 +11,9 @@ onready var engine_sfx = $engine_sfx
 var checkpoints = []
 var laps = 0
 var lap_begin = 0
-var lap_time = 0
+var cur_time = 0
+var last_time = 0
+var best_time = INF
 
 func entered_checkpoint(checkpoint : int, total : int):
 	if checkpoints.size() == 0:
@@ -23,8 +25,9 @@ func entered_checkpoint(checkpoint : int, total : int):
 		if checkpoint == 0 and last_checkpoint == total - 1:
 			print("Lap end!")
 			laps += 1
-			var lap_time = OS.get_ticks_msec() - lap_begin
-			print("TIME: ", lap_time)
+			last_time = OS.get_ticks_msec() - lap_begin
+			if last_time < best_time: best_time = last_time
+			print("TIME: ", last_time)
 			checkpoints.clear()
 		elif checkpoint <= last_checkpoint or checkpoint - last_checkpoint != 1: 
 			print("Wrong checkpoint!")
@@ -38,6 +41,8 @@ func entered_checkpoint(checkpoint : int, total : int):
 		print("Checkpoint!")
 
 func _process(delta):
+	if lap_begin > 0: cur_time = OS.get_ticks_msec() - lap_begin
+	
 	if Input.is_action_just_released("level_reset"):
 		get_tree().reload_current_scene()
 		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Road.tscn" type="PackedScene" id=2]
@@ -10,31 +10,114 @@
 [ext_resource path="res://kenney_racingkit2/overheadRoundColored.tscn" type="PackedScene" id=8]
 [ext_resource path="res://engine-loop/engine-loop-1-normalized.wav" type="AudioStream" id=9]
 [ext_resource path="res://checkpoint.gd" type="Script" id=10]
+[ext_resource path="res://fonts/Tomorrow-Regular.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://GUI.gd" type="Script" id=12]
+[ext_resource path="res://fonts/CatV_6x12_9.ttf" type="DynamicFontData" id=13]
 
-[sub_resource type="PlaneMesh" id=1]
+[sub_resource type="DynamicFont" id=1]
+size = 25
+outline_size = 1
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 29
+outline_size = 1
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 17
+outline_size = 1
+font_data = ExtResource( 13 )
+
+[sub_resource type="PlaneMesh" id=4]
 size = Vector2( 2000, 2000 )
 
-[sub_resource type="ConcavePolygonShape" id=2]
+[sub_resource type="ConcavePolygonShape" id=5]
 data = PoolVector3Array( 1000, 0, 1000, -1000, 0, 1000, 1000, 0, -1000, -1000, 0, 1000, -1000, 0, -1000, 1000, 0, -1000 )
 
-[sub_resource type="BoxShape" id=3]
+[sub_resource type="BoxShape" id=6]
 extents = Vector3( 13, 10, 13 )
 
 [node name="Race" type="Spatial"]
 
-[node name="Control" type="Control" parent="."]
+[node name="GUI" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+player = NodePath("../car")
+
+[node name="left_col" type="VBoxContainer" parent="GUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = -2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="fps" parent="Control" instance=ExtResource( 5 )]
-margin_bottom = 17.0
+[node name="lap_counter" type="Label" parent="GUI/left_col"]
+margin_right = 492.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_outline_modulate = Color( 0.32549, 0.32549, 0.32549, 1 )
+text = "LAP ?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="right_col" type="VBoxContainer" parent="GUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = -1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cur_time" type="Label" parent="GUI/right_col"]
+margin_right = 492.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_outline_modulate = Color( 0.32549, 0.32549, 0.32549, 1 )
+text = "00:00:00"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="last_time" type="Label" parent="GUI/right_col"]
+visible = false
+margin_top = 29.0
+margin_right = 492.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_outline_modulate = Color( 0.32549, 0.32549, 0.32549, 1 )
+text = "LAST 00:00:00"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="best_time" type="Label" parent="GUI/right_col"]
+margin_top = 29.0
+margin_right = 492.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_outline_modulate = Color( 0.32549, 0.32549, 0.32549, 1 )
+text = "BEST 00:00:00"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fps" parent="GUI" instance=ExtResource( 5 )]
+anchor_bottom = 1.0
+valign = 2
 
 [node name="Road" parent="." instance=ExtResource( 2 )]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 9.37546, 0, 0 )
@@ -59,13 +142,13 @@ bus = "SFX"
 
 [node name="Ground" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -175.848, 0.124985, -5.08947 )
-mesh = SubResource( 1 )
+mesh = SubResource( 4 )
 material/0 = ExtResource( 3 )
 
 [node name="StaticBody" type="StaticBody" parent="Ground"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Ground/StaticBody"]
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 
 [node name="Sun" type="DirectionalLight" parent="."]
 transform = Transform( -0.536222, 0.840415, 0.0785432, 0.777537, 0.455595, 0.433439, 0.328485, 0.29349, -0.897754, 3.96282, 15.3862, -0.910858 )
@@ -1179,7 +1262,7 @@ collision_mask = 2
 script = ExtResource( 10 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Checkpoints/checkpoint"]
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 
 [node name="checkpoint2" type="Area" parent="Checkpoints"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.48802, 0, 221.175 )
@@ -1189,7 +1272,7 @@ script = ExtResource( 10 )
 number = 1
 
 [node name="CollisionShape" type="CollisionShape" parent="Checkpoints/checkpoint2"]
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 
 [node name="checkpoint3" type="Area" parent="Checkpoints"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -218.644, 0, 277.156 )
@@ -1199,7 +1282,7 @@ script = ExtResource( 10 )
 number = 2
 
 [node name="CollisionShape" type="CollisionShape" parent="Checkpoints/checkpoint3"]
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 
 [node name="checkpoint4" type="Area" parent="Checkpoints"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -278.591, 0, 71.6552 )
@@ -1209,7 +1292,7 @@ script = ExtResource( 10 )
 number = 3
 
 [node name="CollisionShape" type="CollisionShape" parent="Checkpoints/checkpoint4"]
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 
 [node name="checkpoint5" type="Area" parent="Checkpoints"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -488.962, 0, 14.2761 )
@@ -1219,7 +1302,7 @@ script = ExtResource( 10 )
 number = 4
 
 [node name="CollisionShape" type="CollisionShape" parent="Checkpoints/checkpoint5"]
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 
 [node name="checkpoint6" type="Area" parent="Checkpoints"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -546.925, 0, -218.394 )
@@ -1229,7 +1312,7 @@ script = ExtResource( 10 )
 number = 5
 
 [node name="CollisionShape" type="CollisionShape" parent="Checkpoints/checkpoint6"]
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 
 [node name="checkpoint7" type="Area" parent="Checkpoints"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68.1013, 0, -276.738 )
@@ -1239,7 +1322,7 @@ script = ExtResource( 10 )
 number = 6
 
 [node name="CollisionShape" type="CollisionShape" parent="Checkpoints/checkpoint7"]
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 
 [node name="checkpoint8" type="Area" parent="Checkpoints"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.32861, 0, -107.631 )
@@ -1249,7 +1332,7 @@ script = ExtResource( 10 )
 number = 7
 
 [node name="CollisionShape" type="CollisionShape" parent="Checkpoints/checkpoint8"]
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 [connection signal="body_entered" from="Checkpoints/checkpoint" to="Checkpoints/checkpoint" method="_on_checkpoint_body_entered"]
 [connection signal="body_entered" from="Checkpoints/checkpoint2" to="Checkpoints/checkpoint2" method="_on_checkpoint_body_entered"]
 [connection signal="body_entered" from="Checkpoints/checkpoint3" to="Checkpoints/checkpoint3" method="_on_checkpoint_body_entered"]

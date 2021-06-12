@@ -4,8 +4,9 @@
 [ext_resource path="res://kenney_prototypetextures/PNG/Dark/texture_01.png" type="Texture" id=2]
 [ext_resource path="res://obstacle.tscn" type="PackedScene" id=3]
 [ext_resource path="res://obstacle_spawner.gd" type="Script" id=4]
-[ext_resource path="res://Tomorrow-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://fonts/Tomorrow-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://fps.gd" type="Script" id=6]
+
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
