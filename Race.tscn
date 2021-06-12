@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Road.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://kenney_racingkit2/grandStandRound.tscn" type="PackedScene" id=7]
 [ext_resource path="res://kenney_racingkit2/overheadRoundColored.tscn" type="PackedScene" id=8]
 [ext_resource path="res://engine-loop/engine-loop-1-normalized.wav" type="AudioStream" id=9]
+[ext_resource path="res://checkpoint.gd" type="Script" id=10]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 2000, 2000 )
@@ -16,15 +17,31 @@ size = Vector2( 2000, 2000 )
 [sub_resource type="ConcavePolygonShape" id=2]
 data = PoolVector3Array( 1000, 0, 1000, -1000, 0, 1000, 1000, 0, -1000, -1000, 0, 1000, -1000, 0, -1000, 1000, 0, -1000 )
 
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 13, 10, 13 )
+
 [node name="Race" type="Spatial"]
 
-[node name="fps" parent="." instance=ExtResource( 5 )]
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fps" parent="Control" instance=ExtResource( 5 )]
+margin_bottom = 17.0
 
 [node name="Road" parent="." instance=ExtResource( 2 )]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 9.37546, 0, 0 )
 
 [node name="car" parent="." instance=ExtResource( 1 )]
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, -9.261, 0.226, -14.144 )
+collision_layer = 2
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 
@@ -1152,3 +1169,92 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53677, 0, 8.98929 )
 
 [node name="overheadRoundColored2" parent="Tunnels/Tunnel4" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53671, 0, -4.47214 )
+
+[node name="Checkpoints" type="Spatial" parent="."]
+
+[node name="checkpoint" type="Area" parent="Checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.48802, 0, 42.0405 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 10 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Checkpoints/checkpoint"]
+shape = SubResource( 3 )
+
+[node name="checkpoint2" type="Area" parent="Checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.48802, 0, 221.175 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 10 )
+number = 1
+
+[node name="CollisionShape" type="CollisionShape" parent="Checkpoints/checkpoint2"]
+shape = SubResource( 3 )
+
+[node name="checkpoint3" type="Area" parent="Checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -218.644, 0, 277.156 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 10 )
+number = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="Checkpoints/checkpoint3"]
+shape = SubResource( 3 )
+
+[node name="checkpoint4" type="Area" parent="Checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -278.591, 0, 71.6552 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 10 )
+number = 3
+
+[node name="CollisionShape" type="CollisionShape" parent="Checkpoints/checkpoint4"]
+shape = SubResource( 3 )
+
+[node name="checkpoint5" type="Area" parent="Checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -488.962, 0, 14.2761 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 10 )
+number = 4
+
+[node name="CollisionShape" type="CollisionShape" parent="Checkpoints/checkpoint5"]
+shape = SubResource( 3 )
+
+[node name="checkpoint6" type="Area" parent="Checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -546.925, 0, -218.394 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 10 )
+number = 5
+
+[node name="CollisionShape" type="CollisionShape" parent="Checkpoints/checkpoint6"]
+shape = SubResource( 3 )
+
+[node name="checkpoint7" type="Area" parent="Checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68.1013, 0, -276.738 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 10 )
+number = 6
+
+[node name="CollisionShape" type="CollisionShape" parent="Checkpoints/checkpoint7"]
+shape = SubResource( 3 )
+
+[node name="checkpoint8" type="Area" parent="Checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.32861, 0, -107.631 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 10 )
+number = 7
+
+[node name="CollisionShape" type="CollisionShape" parent="Checkpoints/checkpoint8"]
+shape = SubResource( 3 )
+[connection signal="body_entered" from="Checkpoints/checkpoint" to="Checkpoints/checkpoint" method="_on_checkpoint_body_entered"]
+[connection signal="body_entered" from="Checkpoints/checkpoint2" to="Checkpoints/checkpoint2" method="_on_checkpoint_body_entered"]
+[connection signal="body_entered" from="Checkpoints/checkpoint3" to="Checkpoints/checkpoint3" method="_on_checkpoint_body_entered"]
+[connection signal="body_entered" from="Checkpoints/checkpoint4" to="Checkpoints/checkpoint4" method="_on_checkpoint_body_entered"]
+[connection signal="body_entered" from="Checkpoints/checkpoint5" to="Checkpoints/checkpoint5" method="_on_checkpoint_body_entered"]
+[connection signal="body_entered" from="Checkpoints/checkpoint6" to="Checkpoints/checkpoint6" method="_on_checkpoint_body_entered"]
+[connection signal="body_entered" from="Checkpoints/checkpoint7" to="Checkpoints/checkpoint7" method="_on_checkpoint_body_entered"]
+[connection signal="body_entered" from="Checkpoints/checkpoint8" to="Checkpoints/checkpoint8" method="_on_checkpoint_body_entered"]

@@ -1,4 +1,5 @@
 extends VehicleBody
+class_name Car
 
 const MAX_SPEED = 750
 const MAX_STEERING = 0.25
@@ -6,6 +7,35 @@ const ACCELERATION = 0.75
 
 onready var camera = $Camera
 onready var engine_sfx = $engine_sfx
+
+var checkpoints = []
+var laps = 0
+var lap_begin = 0
+var lap_time = 0
+
+func entered_checkpoint(checkpoint : int, total : int):
+	if checkpoints.size() == 0:
+		if checkpoint != 0:
+			print("Wrong checkpoint!")
+			return
+	else:
+		var last_checkpoint = checkpoints.back()
+		if checkpoint == 0 and last_checkpoint == total - 1:
+			print("Lap end!")
+			laps += 1
+			var lap_time = OS.get_ticks_msec() - lap_begin
+			print("TIME: ", lap_time)
+			checkpoints.clear()
+		elif checkpoint <= last_checkpoint or checkpoint - last_checkpoint != 1: 
+			print("Wrong checkpoint!")
+			return
+	
+	checkpoints.append(checkpoint)
+	if checkpoints.size() == 1:
+		print("Lap begin!")
+		lap_begin = OS.get_ticks_msec()
+	else:
+		print("Checkpoint!")
 
 func _process(delta):
 	if Input.is_action_just_released("level_reset"):
