@@ -35,8 +35,10 @@ outline_size = 2
 font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 48
-font_data = ExtResource( 13 )
+size = 34
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 11 )
 
 [sub_resource type="PlaneMesh" id=6]
 size = Vector2( 2000, 2000 )
@@ -149,7 +151,16 @@ __meta__ = {
 wait_time = 1.5
 one_shot = true
 
-[node name="play_button" type="Button" parent="GUI"]
+[node name="overlay" type="ColorRect" parent="GUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -10.0
+margin_top = -10.0
+margin_right = 10.0
+margin_bottom = 10.0
+color = Color( 0, 0, 0, 0.462745 )
+
+[node name="play_button" type="Button" parent="GUI/overlay"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -1378,7 +1389,7 @@ number = 7
 
 [node name="CollisionShape" type="CollisionShape" parent="Checkpoints/checkpoint8"]
 shape = SubResource( 8 )
-[connection signal="pressed" from="GUI/play_button" to="GUI" method="_on_play_button_pressed"]
+[connection signal="pressed" from="GUI/overlay/play_button" to="GUI" method="_on_play_button_pressed"]
 [connection signal="body_entered" from="Checkpoints/checkpoint" to="Checkpoints/checkpoint" method="_on_checkpoint_body_entered"]
 [connection signal="body_entered" from="Checkpoints/checkpoint2" to="Checkpoints/checkpoint2" method="_on_checkpoint_body_entered"]
 [connection signal="body_entered" from="Checkpoints/checkpoint3" to="Checkpoints/checkpoint3" method="_on_checkpoint_body_entered"]

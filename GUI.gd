@@ -8,7 +8,6 @@ onready var last_time : Label = $right_col/last_time
 onready var best_time : Label = $right_col/best_time
 onready var record : Label = $record
 onready var record_timer : Timer = $record/Timer
-onready var play_button : Button = $play_button
 
 func _ready():
 	player.connect("new_record", self, "_on_new_record")
@@ -43,5 +42,5 @@ func format(duration):
 
 func _on_play_button_pressed():
 	player.input_enabled = true
-	play_button.hide()
+	$overlay.hide()
 	print("PLAY!")
