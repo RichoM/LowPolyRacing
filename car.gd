@@ -8,6 +8,8 @@ const ACCELERATION = 0.75
 onready var camera = $Camera
 onready var engine_sfx = $engine_sfx
 
+signal new_record
+
 var checkpoints = []
 var laps = 0
 var lap_begin = 0
@@ -26,7 +28,9 @@ func entered_checkpoint(checkpoint : int, total : int):
 			print("Lap end!")
 			laps += 1
 			last_time = OS.get_ticks_msec() - lap_begin
-			if last_time < best_time: best_time = last_time
+			if last_time < best_time: 
+				best_time = last_time
+				emit_signal("new_record")
 			print("TIME: ", last_time)
 			checkpoints.clear()
 		elif checkpoint <= last_checkpoint or checkpoint - last_checkpoint != 1: 
