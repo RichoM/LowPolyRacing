@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/turn_arrow.png-1ef4f70e85eb5f40a4e6265ab1d691b3.image"
+
+[deps]
+
+source_file="res://turn_arrow.png"
+dest_files=[ "res://.import/turn_arrow.png-1ef4f70e85eb5f40a4e6265ab1d691b3.image" ]
+
+[params]
+
